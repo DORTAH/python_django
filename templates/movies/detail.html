@@ -12,6 +12,6 @@
         <li>{{ object.duration }}</li>
     </ul>
     <a href="{% url 'movie_update' object.slug %}">+ Edit Blog Post</a>
-    <p><a href="{% url 'movie_delete' object.pk %}">+ Delete Movie</a></p>
+    <p><a href="{% url 'movie_delete' object.slug %}">+ Delete Movie</a></p>
 </div>
 {% endblock content %}

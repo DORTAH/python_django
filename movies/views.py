@@ -30,12 +30,10 @@ class UpdateMovie(UpdateView):
 
 
     def get_success_url(self):
-        return reverse('movie', kwargs={'slug': self.object.slug})
+        return reverse('movie', kwargs={'pk': self.object.pk})
     
 class DeleteMovie(DeleteView):
     model = Movie
     template_name = 'movies/DeleteMovie.html'
     success_url = reverse_lazy('movies')
 
-    def get_success_url(self):
-        return reverse('movie', kwargs={'slug': self.object.slug})
