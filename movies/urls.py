@@ -4,8 +4,8 @@ from .views import MoviesView, MovieView, NewMovie, UpdateMovie, DeleteMovie, ad
 
 urlpatterns = [
     path("", MoviesView.as_view(), name="movies"),
-    path("<str:slug>", MovieView.as_view(), name="movie"),
     path("new", NewMovie.as_view(), name="movie_new"),
+    path("<str:slug>", MovieView.as_view(), name="movie"),
     path("delete/<str:slug>", DeleteMovie.as_view(), name="movie_delete"),
     path("update/<str:slug>", UpdateMovie.as_view(), name="movie_update"),
     path("<str:slug>/add_review", add_review, name='add_review')
