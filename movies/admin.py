@@ -1,6 +1,11 @@
 from django.contrib import admin
-from .models import Movie
+from .models import Movie, Review
 
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ['movie', 'content', 'created']
+    list_filter = ['movie', 'created']
+    search_fields = ['content']
 
 
 class MovieAdmin(admin.ModelAdmin):
