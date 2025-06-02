@@ -13,5 +13,22 @@
     </ul>
     <a href="{% url 'movie_update' object.slug %}">+ Edit Blog Post</a>
     <p><a href="{% url 'movie_delete' object.slug %}">+ Delete Movie</a></p>
+    <section>
+        {% for review in object.reviews.all %}
+            <p>{{ review.content }} {{ review.created }}</p>
+        {% endfor %}
+    </section>
+    {% if user.is_authenticated %}
+    <form action="{% url 'add_review' object.slug %}" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <section class="entry__container">
+            {{ field.label_tag }}
+            {{ field }}
+        </section>
+        {% endfor %}
+        <button type="submit">Add Review</button>
+    </form>
+    {% endif %}
 </div>
-{% endblock content %}
+{% endblock %}

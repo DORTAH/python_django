@@ -29,3 +29,8 @@ main {
 footer {
   padding: 0.5rem;
 }
+
+.entry__container {
+  display: flex;
+  flex-direction: column;
+}

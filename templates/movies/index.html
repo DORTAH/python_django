@@ -9,7 +9,7 @@
   <ul>
     {% for movie in object_list %}
     <li>
-      <a href="{% url 'movie' movie.id %}">{{ movie.title }}</a>
+      <a href="{% url 'movie' movie.slug %}">{{ movie.title }}</a>
     </li>
     {% endfor %}
   </ul>

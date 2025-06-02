@@ -3,7 +3,7 @@ from .models import Movie, Review
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ['movie', 'content', 'created']
+    list_display = ['author','movie', 'content', 'created']
     list_filter = ['movie', 'created']
     search_fields = ['content']
 
